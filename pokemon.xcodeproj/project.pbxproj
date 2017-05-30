@@ -96,7 +96,7 @@
 				TargetAttributes = {
 					F5045A8F1EDDA5B200D5B602 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = YP74J7U6Z6;
+						DevelopmentTeam = V7Y7N3XL88;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -261,7 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YP74J7U6Z6;
+				DEVELOPMENT_TEAM = V7Y7N3XL88;
 				INFOPLIST_FILE = pokemon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eric.pokemon;
@@ -274,7 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YP74J7U6Z6;
+				DEVELOPMENT_TEAM = V7Y7N3XL88;
 				INFOPLIST_FILE = pokemon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eric.pokemon;
