@@ -30,13 +30,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    
+    // get pokeID with pokemon's name
     func parsePokemonCSV(){
         let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")
         
         do{
             let csv = try CSV(contentsOfURL: path!)
             let rows = csv.rows
-            print(rows)
+            //print(rows)
             
             for row in rows{
                 let pokeID = Int(row["id"]!)!
@@ -51,9 +53,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             print(err.debugDescription)
         }
-        
-        
-        
         
     }
 
@@ -85,6 +84,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var poke: pokemon
+        
+        if inSearchMode{
+            
+            poke = filterPokemons[indexPath.row]
+            
+        }else{
+            
+            poke = pokemons[indexPath.row]
+            
+        }
+        
+        performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
         
     }
     
@@ -118,6 +131,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         if searchBar.text == nil || searchBar.text == ""{
             
             inSearchMode = false
@@ -134,6 +148,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collection.reloadData()
             
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "PokemonDetailVC"{
+            if let detailVC = segue.destination as? PokemonDetailVC{
+                if let poke = sender as? pokemon{
+                    detailVC.pokemon = poke
+                }
+            }
+        }
+        
     }
     
     
